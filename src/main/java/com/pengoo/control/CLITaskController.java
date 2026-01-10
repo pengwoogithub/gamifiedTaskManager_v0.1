@@ -1,16 +1,21 @@
 package com.pengoo.control;
 
+import com.pengoo.model.entity.Level;
 import com.pengoo.model.service.TaskService;
+import com.pengoo.model.service.PointsService;
 import com.pengoo.model.entity.Task;
 
 import java.util.List;
 
-//parse
+
+//parseaea
 public class CLITaskController {
     private TaskService taskService;
+    private PointsService pointsService;
 
-    public CLITaskController(){
-        this.taskService = new TaskService();
+    public CLITaskController(TaskService taskService, PointsService pointsService){
+       this.taskService = taskService;
+       this.pointsService = pointsService;
     }
     public List<Task> getAllTasks(){
         return taskService.getAllTasks();
@@ -23,10 +28,17 @@ public class CLITaskController {
     }
     public void updateTask(int index){
         taskService.updateTask(index);
-    }
-    public void getPointsLevel(){
 
     }
+    //return the current Level and points/xp since xp=points
+    public Level getPointsLevel(){
+        return pointsService.getCurrentLevel();
+    }
+    public int getXP(){
+
+
+    }
+
 
 
 

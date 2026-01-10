@@ -2,6 +2,7 @@ package com.pengoo.model.service;
 
 import com.pengoo.model.entity.Task;
 import com.pengoo.repository.TaskRepository;
+import com.pengoo.model.service.PointsService;
 
 import java.util.List;
 
@@ -11,10 +12,12 @@ public class TaskService {
 
     private TaskRepository taskRepository;
     private ActionTracker actionTracker;
+    private PointsService pointsService;
 
     public TaskService(){
         this.taskRepository = new TaskRepository();
         this.actionTracker = new ActionTracker();
+        this.pointsService = new PointsService();
     }
 
     public void addTask(String title, String description, int importance){
@@ -37,7 +40,8 @@ public class TaskService {
         boolean prevStatus = task.isDone();
         taskRepository.updateTask(index);
         int pointsAdded = task.getImportance();
-        actionTracker.actionUpdate(task, prevStatus, pointsAdded ); //undo stack
+        actionTracker.actionUpdate(task, prevStatus, pointsAdded); //undo stack\
+        pointsService.addPoints(pointsAdded); //for points
     }
 
     public List<Task> getAllTasks(){

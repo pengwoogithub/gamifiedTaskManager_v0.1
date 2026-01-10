@@ -1,6 +1,7 @@
 package com.pengoo.model.service;
 
 import com.pengoo.model.entity.Action;
+import com.pengoo.model.entity.ActionType;
 import com.pengoo.model.entity.Task;
 
 import java.util.Optional;
@@ -14,14 +15,18 @@ public class ActionTracker {
     }
 
     //setters
+    //maybe some validators since can add anything to anywhere
     public void actionAdd(Task task){
-        undoStack.push(new Action(Action.ActionType.ADD, task));
+        Action action = new Action.Builder(ActionType.ADD,task).build();
+        undoStack.push(action);
     }
     public void actionRemove(Task task, int index){
-        undoStack.push(new Action(Action.ActionType.REMOVE, task, index));
+        Action action = new Action.Builder(ActionType.REMOVE, task).index(index).build();
+        undoStack.push(action);
     }
     public void actionUpdate(Task task, boolean prevStatus, int pointsAdded){
-        undoStack.push(new Action(Action.ActionType.UPDATE, task, prevStatus, pointsAdded));
+        Action action = new Action.Builder(ActionType.UPDATE, task).prevStatus(prevStatus).pointsAdded(pointsAdded).build();
+        undoStack.push(action);
     }
 
     //getter

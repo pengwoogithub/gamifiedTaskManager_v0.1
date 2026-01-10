@@ -7,9 +7,15 @@ import java.util.Scanner;
 
 // for inputs of user
 public class TaskMenu {
-    private CLITaskController cliTaskController = new CLITaskController();
-    private DisplayText displayText = new DisplayText();
+    private CLITaskController cliTaskController;
+    private DisplayText displayText;
     private Scanner scanner = new Scanner(System.in);
+
+
+    public TaskMenu(CLITaskController cliTaskController, DisplayText displayText){
+        this.cliTaskController = cliTaskController;
+        this.displayText = displayText;
+    }
 
     public void run(){
         boolean running = true;
@@ -72,14 +78,13 @@ public class TaskMenu {
         cliTaskController.updateTask(index);
     }
     private void handlePointsLevel(){
-
+        //need to display level name and current level
+        cliTaskController.getPointsLevel();
     }
     private void undo(){
 
     }
-
-
-
+    
 
     //for menu check
     private int readMenuChoice(int min, int max){
