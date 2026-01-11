@@ -6,12 +6,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TaskRepository {
-    private List<Task> tasks;
+    private List<Task> tasks = new ArrayList<>();
 
-    public TaskRepository(){
-        this.tasks = new ArrayList<>();
+    public void saveTask(Task task){
+        tasks.add(task);
     }
 
+    public void deleteTask(Task task){
+        tasks.remove(task);
+    }
+
+    public Task findByIndex(int index){
+        return tasks.get(index);
+    }
+
+    public ArrayList<Task> getTasks(){
+        return new ArrayList<>(tasks);  //new  copy instead of exposing self
+    }
+
+
+
+
+
+    /*
+    old this is bad
     public void addTask(Task task){
         tasks.add(task);
     }
@@ -31,6 +49,8 @@ public class TaskRepository {
     public Task getTask(int index){
         return tasks.get(index);
     }
+
+     */
 
 
 

@@ -10,14 +10,14 @@ import java.util.List;
 // data validation, rules, storage
 public class TaskService {
 
-    private TaskRepository taskRepository;
-    private ActionTracker actionTracker;
-    private PointsService pointsService;
+    private final TaskRepository taskRepository;
+    private final ActionTracker actionTracker;
+    private final PointsService pointsService;
 
-    public TaskService(){
-        this.taskRepository = new TaskRepository();
-        this.actionTracker = new ActionTracker();
-        this.pointsService = new PointsService();
+    public TaskService(TaskRepository taskRepository, ActionTracker actionTracker, PointsService pointsService){
+        this.taskRepository = taskRepository;
+        this.actionTracker = actionTracker;
+        this.pointsService = pointsService;
     }
 
     public void addTask(String title, String description, int importance){
@@ -26,19 +26,21 @@ public class TaskService {
         }
 
         Task task = new Task(title, description, importance);
-        taskRepository.addTask(task);
+        taskRepository.saveTask(task);
         actionTracker.actionAdd(task);
     }
     public void removeTask(int index){
         index = validateAndNormalizeIndex(index);
-        Task removed = taskRepository.removeTask(index);
+
+        Task removed = taskRepository.findByIndex(index);
+        taskRepository.deleteTask(removed);
         actionTracker.actionRemove(removed, index); //for undo stack
     }
     public void updateTask(int index){
         index = validateAndNormalizeIndex(index);
-        Task task = taskRepository.getTask(index);
+        Task task = taskRepository.findByIndex(index);
         boolean prevStatus = task.isDone();
-        taskRepository.updateTask(index);
+        taskRepository.findByIndex(index).setDone();
         int pointsAdded = task.getImportance();
         actionTracker.actionUpdate(task, prevStatus, pointsAdded); //undo stack\
         pointsService.addPoints(pointsAdded); //for points
