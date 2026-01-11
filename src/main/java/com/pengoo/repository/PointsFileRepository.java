@@ -14,7 +14,8 @@ public class PointsFileRepository implements PointsRepository{
         loadPointsFile();
     }
 
-    public void loadPointsFile(){
+    //loading from text
+    private void loadPointsFile(){
         try{
             if(Files.exists(pointsPath)){
                 totalPoints = Integer.parseInt(Files.readString(pointsPath));
@@ -36,6 +37,7 @@ public class PointsFileRepository implements PointsRepository{
     @Override
     //file save
     public void savePoints(int totalPoints){
+        this.totalPoints = totalPoints;
         try{
             Files.writeString(pointsPath, String.valueOf(totalPoints));
         }

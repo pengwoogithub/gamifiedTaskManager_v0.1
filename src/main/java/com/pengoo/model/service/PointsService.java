@@ -1,37 +1,35 @@
 package com.pengoo.model.service;
 
 import com.pengoo.model.entity.Level;
-import com.pengoo.repository.PointsFileRepository;
 import com.pengoo.repository.PointsRepository;
 
 
 public class PointsService {
 
-    private PointsRepository pointsRepository;
-    private LevelTracker levelTracker;
+    private final PointsRepository pointsRepository;
+    private final LevelTracker levelTracker;
     private int totalPoints;
 
 
     public PointsService(PointsRepository pointsRepository, LevelTracker levelTracker){
         this.pointsRepository = pointsRepository;
         this.levelTracker = levelTracker;
+        loadPoints();
     }
 
     public void loadPoints(){
-        this.totalPoints = pointsRepository.getTotalPoints();
+       totalPoints = pointsRepository.getTotalPoints();
     }
 
     public void addPoints(int addedPoints){
         totalPoints += addedPoints;
-
-
-        levelTracker.loadPoints(addedPoints);
+        levelTracker.loadPoints(totalPoints);
+        pointsRepository.savePoints(totalPoints);
     }
 
     public void removePoints(int addedPoints){
-
-
-        levelTracker.loadPoints(addedPoints);
+        totalPoints -= addedPoints;
+        levelTracker.loadPoints(totalPoints);
     }
 
     public Level getCurrentLevel(){
