@@ -3,8 +3,8 @@ package com.pengoo.model.entity;
 //need to redo action because this is fragile and prone to errors
 public class Action {
     //parameters
-    private ActionType actionType;
-    private Task task;
+    private final ActionType actionType;
+    private final Task task;
     private int index;
     private boolean prevStatus;
     private int pointsAdded ;

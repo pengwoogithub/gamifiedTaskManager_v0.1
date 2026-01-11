@@ -20,8 +20,7 @@ public enum Level {
     public int getPointsReq(){
         return pointsReq;
     }
-    public String getDisplayName(){
-        return displayLevelName;
-    }
+
+
 
 }

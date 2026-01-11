@@ -8,7 +8,7 @@ import com.pengoo.model.service.PointsService;
 import com.pengoo.model.service.TaskService;
 import com.pengoo.repository.PointsFileRepository;
 import com.pengoo.repository.PointsRepository;
-import com.pengoo.repository.TaskRepository;
+import com.pengoo.repository.TaskListRepository;
 import com.pengoo.view.DisplayText;
 
 
@@ -17,13 +17,13 @@ public class Main {
         PointsRepository pointsRepository = new PointsFileRepository();
         LevelTracker levelTracker = new LevelTracker();
 
-        TaskRepository taskRepository = new TaskRepository();
+        TaskListRepository taskListRepository = new TaskListRepository();
         ActionTracker actionTracker = new ActionTracker();
 
 
         PointsService pointsService = new PointsService(pointsRepository, levelTracker);
 
-        TaskService taskService = new TaskService(taskRepository, actionTracker, pointsService);
+        TaskService taskService = new TaskService(taskListRepository, actionTracker, pointsService);
         CLITaskController controller = new CLITaskController(taskService, pointsService);
         DisplayText displayText = new DisplayText();
         TaskMenu taskMenu = new TaskMenu(controller, displayText);

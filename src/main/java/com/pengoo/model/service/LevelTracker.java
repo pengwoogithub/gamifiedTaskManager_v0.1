@@ -12,7 +12,7 @@ public class LevelTracker {
     }
 
     public void loadPoints(int addedPoints){
-        this.currentXp = addedPoints;
+        this.currentXp += addedPoints;
         attributeLevel();
     }
 

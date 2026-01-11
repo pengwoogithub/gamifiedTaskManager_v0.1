@@ -10,8 +10,8 @@ import java.util.List;
 
 //parseaea
 public class CLITaskController {
-    private TaskService taskService;
-    private PointsService pointsService;
+    private final TaskService taskService;
+    private final PointsService pointsService;
 
     public CLITaskController(TaskService taskService, PointsService pointsService){
        this.taskService = taskService;
@@ -34,12 +34,6 @@ public class CLITaskController {
     public Level getPointsLevel(){
         return pointsService.getCurrentLevel();
     }
-    public int getXP(){
-
-
-    }
-
-
 
 
     //helper

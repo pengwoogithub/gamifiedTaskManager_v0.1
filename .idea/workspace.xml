@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4e377b0-957e-4b3a-9db8-c7206354b3f0" name="Changes" comment="update repository, fixed responsibilities and dependencies">
+    <list default="true" id="b4e377b0-957e-4b3a-9db8-c7206354b3f0" name="Changes" comment="fixed points system, still needs undo integration">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/model/service/UndoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/repository/TaskDbRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/repository/TaskListRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/model/service/PointsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/model/service/PointsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/control/CLITaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/control/CLITaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/model/entity/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/model/entity/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/model/entity/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/model/entity/Level.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/model/service/LevelTracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/model/service/LevelTracker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/model/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/model/service/TaskService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/repository/PointsFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/repository/PointsFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/repository/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/repository/TaskRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +101,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768101154786</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixed points system, still needs undo integration">
+      <option name="closed" value="true" />
+      <created>1768102140032</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1768102140032</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,7 +126,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dis da new code" />
     <MESSAGE value="update repository, fixed responsibilities and dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="update repository, fixed responsibilities and dependencies" />
+    <MESSAGE value="fixed points system, still needs undo integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed points system, still needs undo integration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -7,7 +7,7 @@ public class PointsFileRepository implements PointsRepository{
 
 
     private int totalPoints;
-    private Path pointsPath = FileSystems.getDefault().getPath("data","points.txt");
+    private final Path pointsPath = FileSystems.getDefault().getPath("data","points.txt");
 
 
     public PointsFileRepository(){

@@ -1,8 +1,7 @@
 package com.pengoo.model.service;
 
 import com.pengoo.model.entity.Task;
-import com.pengoo.repository.TaskRepository;
-import com.pengoo.model.service.PointsService;
+import com.pengoo.repository.TaskListRepository;
 
 import java.util.List;
 
@@ -10,12 +9,12 @@ import java.util.List;
 // data validation, rules, storage
 public class TaskService {
 
-    private final TaskRepository taskRepository;
+    private final TaskListRepository taskListRepository;
     private final ActionTracker actionTracker;
     private final PointsService pointsService;
 
-    public TaskService(TaskRepository taskRepository, ActionTracker actionTracker, PointsService pointsService){
-        this.taskRepository = taskRepository;
+    public TaskService(TaskListRepository taskListRepository, ActionTracker actionTracker, PointsService pointsService){
+        this.taskListRepository = taskListRepository;
         this.actionTracker = actionTracker;
         this.pointsService = pointsService;
     }
@@ -26,33 +25,33 @@ public class TaskService {
         }
 
         Task task = new Task(title, description, importance);
-        taskRepository.saveTask(task);
+        taskListRepository.saveTask(task);
         actionTracker.actionAdd(task);
     }
     public void removeTask(int index){
         index = validateAndNormalizeIndex(index);
 
-        Task removed = taskRepository.findByIndex(index);
-        taskRepository.deleteTask(removed);
+        Task removed = taskListRepository.findByIndex(index);
+        taskListRepository.deleteTask(removed);
         actionTracker.actionRemove(removed, index); //for undo stack
     }
     public void updateTask(int index){
         index = validateAndNormalizeIndex(index);
-        Task task = taskRepository.findByIndex(index);
+        Task task = taskListRepository.findByIndex(index);
         boolean prevStatus = task.isDone();
-        taskRepository.findByIndex(index).setDone();
+        taskListRepository.findByIndex(index).setDone();
         int pointsAdded = task.getImportance();
         actionTracker.actionUpdate(task, prevStatus, pointsAdded); //undo stack\
         pointsService.addPoints(pointsAdded); //for points
     }
 
     public List<Task> getAllTasks(){
-        return taskRepository.getTasks();
+        return taskListRepository.getTasks();
     }
 
     //helper
     private int validateAndNormalizeIndex(int index) {
-        if (index <= 0 || index > taskRepository.getTasks().size()) {
+        if (index <= 0 || index > taskListRepository.getTasks().size()) {
             throw new IllegalArgumentException(
                     "No task at index " + index
             );
