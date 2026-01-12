@@ -5,17 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4e377b0-957e-4b3a-9db8-c7206354b3f0" name="Changes" comment="fixed points system, still needs undo integration">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/model/service/UndoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/repository/TaskDbRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/repository/TaskListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/action/ActionCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/action/AddCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/action/RemoveCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/action/UpdateCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/control/CLITaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/control/CLITaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/model/entity/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/model/entity/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/model/entity/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/model/entity/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/model/service/LevelTracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/model/service/LevelTracker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/model/entity/Action.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/model/entity/ActionType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/model/entity/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/model/entity/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/model/service/ActionTracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/model/service/ActionTracker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/model/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/model/service/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/repository/PointsFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/repository/PointsFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/repository/TaskDbRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/repository/TaskDbRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pengoo/repository/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pengoo/repository/TaskRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768102140032</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed points system, still needs undo integration">
+      <option name="closed" value="true" />
+      <created>1768119643734</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1768119643734</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,16 +137,5 @@
     <MESSAGE value="update repository, fixed responsibilities and dependencies" />
     <MESSAGE value="fixed points system, still needs undo integration" />
     <option name="LAST_COMMIT_MESSAGE" value="fixed points system, still needs undo integration" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pengoo/model/service/ActionTracker.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
